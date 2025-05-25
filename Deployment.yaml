@@ -6,11 +6,11 @@ spec: # Defines the Deployment Behaviour
   replicas: 3
   selector:
     matchLabels:
-      app: RDapp
+      app: rdapp
   template:
     metadata:
       labels:
-        app: RDapp
+        app: rdapp
     spec: # Define the Pod behaviour
       containers:
       - name: RDapp-container
@@ -20,7 +20,7 @@ spec: # Defines the Deployment Behaviour
             memory: "250Mi"
             cpu: "500m"
           requests:
-            memory: "128Mb"
+            memory: "128Mi"
             cpu: "50m"
         ports:
         - containerPort: 3015
