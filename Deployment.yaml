@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: RD0105
+  name: rd0105
 spec: # Defines the Deployment Behaviour
   replicas: 3
   selector:
