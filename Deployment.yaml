@@ -6,11 +6,11 @@ spec: # Defines the Deployment Behaviour
   replicas: 3
   selector:
     matchLabels:
-      app: rdev
+      app: rdapp
   template:
     metadata:
       labels:
-        app: rdev
+        app: rdapp
     spec: # Define the Pod behaviour
       containers:
       - name: rdapp-container
@@ -29,10 +29,10 @@ spec: # Defines the Deployment Behaviour
 apiVersion: v1
 kind: Service
 metadata:
-  name: rdev
+  name: rdapp-app-svc
 spec:
   selector:
-    app: rdev
+    app: rdapp 
   ports:
   - port: 3016 # Service Port
     targetPort: 3015 # Container Port
