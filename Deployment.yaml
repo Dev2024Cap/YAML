@@ -6,11 +6,11 @@ spec: # Defines the Deployment Behaviour
   replicas: 3
   selector:
     matchLabels:
-      app: rdapp
+      app: rdev
   template:
     metadata:
       labels:
-        app: rdapp
+        app: rdev
     spec: # Define the Pod behaviour
       containers:
       - name: rdapp-container
@@ -24,3 +24,16 @@ spec: # Defines the Deployment Behaviour
             cpu: "50m"
         ports:
         - containerPort: 3015
+---
+# Writing Service.yml to expose the application
+appVersion: v1
+kind: service
+metadata:
+  name: rd0105
+spec:
+  selector:
+    app: rd0105
+ports:
+  port: 3016 # Service Port
+  targetPort: 3015 # Container Port
+type: LoadBalancer
