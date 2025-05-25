@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: RD0105
-spec: # select the deployment behaviour
+spec: # Defines the Deployment Behaviour
   replicas: 3
   selector:
     matchLabels:
@@ -11,13 +11,13 @@ spec: # select the deployment behaviour
     metadata:
       labels:
         app: RDapp
-    spec: #define the pod behaviour
+    spec: # Define the Pod behaviour
       containers:
-      - name: RDapp
+      - name: RDapp-container
         image: muralisocial123/flower-app:1.0
         resources:
           limits:
-            memory: "128Mi"
+            memory: "250Mi"
             cpu: "500m"
           requests:
             memory: "128Mb"
