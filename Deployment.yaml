@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RD0105
+spec: # select the deployment behaviour
+  replicas: 3
+  selector:
+    matchLabels:
+      app: RDapp
+  template:
+    metadata:
+      labels:
+        app: RDapp
+    spec: #define the pod behaviour
+      containers:
+      - name: RDapp
+        image: muralisocial123/flower-app:1.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mb"
+            cpu: "50m"
+        ports:
+        - containerPort: 3015
