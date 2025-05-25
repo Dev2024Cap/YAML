@@ -26,14 +26,14 @@ spec: # Defines the Deployment Behaviour
         - containerPort: 3015
 ---
 # Writing Service.yml to expose the application
-appVersion: v1
-kind: service
+apiVersion: v1
+kind: Service
 metadata:
   name: rd0105
 spec:
   selector:
     app: rd0105
-ports:
-  port: 3016 # Service Port
-  targetPort: 3015 # Container Port
-type: LoadBalancer
+  ports:
+  - port: 3016 # Service Port
+    targetPort: 3015 # Container Port
+  type: LoadBalancer
