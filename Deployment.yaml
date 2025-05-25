@@ -13,7 +13,7 @@ spec: # Defines the Deployment Behaviour
         app: rdapp
     spec: # Define the Pod behaviour
       containers:
-      - name: RDapp-container
+      - name: rdapp-container
         image: muralisocial123/flower-app:1.0
         resources:
           limits:
