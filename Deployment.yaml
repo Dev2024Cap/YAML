@@ -32,7 +32,7 @@ metadata:
   name: rd0105
 spec:
   selector:
-    app: rd0105
+    app: rdev
   ports:
   - port: 3016 # Service Port
     targetPort: 3015 # Container Port
